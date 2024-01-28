@@ -1,0 +1,160 @@
+<div class="container-fluid login p-0">
+  <div class="login-side">
+    <img
+      src="https://images.pexels.com/photos/5942760/pexels-photo-5942760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      height="745"
+      width="725"
+    />
+  </div>
+  <div class="login-side" style="padding-top: 30px">
+    <div class="login-child">
+      <h2>Sign Up</h2>
+    </div>
+    <div class="login-child">
+      <form #signupForm="ngForm" (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="name" class="label">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Username"
+            name="name"
+            [(ngModel)]="user.name"
+            required
+            #name="ngModel"
+            [class.is-invalid]="name.invalid && name.touched"
+          />
+          <div
+            *ngIf="name.errors && name.invalid && name.touched"
+            class="alert alert-danger"
+            style="margin-top: 10px"
+          >
+            <div *ngIf="name.hasError('required')">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phno" class="label">Phone Number:</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter phonenumber"
+            name="phoneNumber"
+            [(ngModel)]="user.phoneNumber"
+            required
+            #phoneNumber="ngModel"
+            pattern="^\d{10}$"
+            [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched"
+          />
+
+          <div
+            *ngIf="
+              phoneNumber.errors && phoneNumber.invalid && phoneNumber.touched
+            "
+            class="alert alert-danger"
+            style="margin-top: 10px"
+          >
+            <div *ngIf="phoneNumber.hasError('required')">
+              Phone Number is required
+            </div>
+            <div *ngIf="phoneNumber.hasError('pattern')">
+              Enter Valid Phone Number
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="label">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter email"
+            name="email"
+            required
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            [class.is-invalid]="email.invalid && email.touched"
+          />
+
+          <div
+            *ngIf="email.errors && email.invalid && email.touched"
+            class="alert alert-danger"
+            style="margin-top: 10px"
+          >
+            <div *ngIf="email.hasError('required')">Email is required</div>
+            <div *ngIf="email.hasError('pattern')">Enter Valid Email</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd" class="label">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Minimum 8 characters,at least one letter and one number"
+            name="password"
+            required
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+            [class.is-invalid]="password.invalid && password.touched"
+          />
+
+          <div
+            *ngIf="password.errors && password.invalid && password.touched"
+            class="alert alert-danger"
+            style="margin-top: 10px"
+          >
+            <div *ngIf="password.hasError('required')">
+              Password is required
+            </div>
+            <div *ngIf="password.hasError('pattern')">Enter Valid password</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd" class="label">Confirm Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter password"
+            name="cpassword"
+            required
+            (ngModel)="(user.password)"
+            #cpassword="ngModel"
+            [class.is-invalid]="password.invalid && password.touched"
+          />
+          <div
+            class="alert alert-danger"
+            [class.d-none]="
+              cpassword.value == password.value || password.untouched
+            "
+            style="margin-top: 10px"
+          >
+            Password doesn't Match
+          </div>
+        </div>
+        <tr></tr>
+        <div class="login-child">
+          <button
+            [disabled]="signupForm.form.invalid"
+            type="submit"
+            class="btn btn-primary"
+            style="margin-top: 10px; width: 200px; border-radius: 15px"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <br />
+    <div class="login-child">
+      <small class="float-end"
+        >Already Registerd?<a
+          style="color: blue; text-decoration: none; font-size: large"
+          [routerLink]="['']"
+        >
+          &nbsp; Login</a
+        >
+      </small>
+    </div>
+  </div>
+</div>

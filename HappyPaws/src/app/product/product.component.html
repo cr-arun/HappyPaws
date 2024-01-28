@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+<div class="container-fluid product-outer">
+  <div class="row" style="margin-left: 15px">
+    <div class="col-sm-3 product" *ngFor="let temp of products">
+      <div class="product-tumb">
+        <img class="img-fluid" [src]="temp.imageUrl" alt="" />
+      </div>
+      <div class="product-details">
+        <div class="row" style="padding-left: 15px">
+          <h4>
+            <a (click)="showDetails(temp.productid)">{{ temp.productName }}</a>
+          </h4>
+        </div>
+        <div class="product-bottom-details">
+          <div class="product-price">PRICE :&#x20B9;{{ temp.price }}</div>
+          <div class="like">
+            <svg
+              style="max-height: 20px; color: #ff1493"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              class="like"
+              fill="currentColor"
+              *ngIf="temp.wishlist === false"
+              (click)="wishToggle(temp.productid, temp)"
+            >
+              <g>
+                <path
+                  d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              style="max-height: 20px"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              class="liked"
+              fill="currentColor"
+              *ngIf="temp.wishlist === true"
+              (click)="show(temp.productid, temp)"
+            >
+              <g>
+                <path
+                  d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center" style="padding-left: 17px">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="toCart(temp.productid)"
+          style=""
+        >
+          Add to Cart
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="showDetails(temp.productid)"
+          data-toggle="modal"
+          data-target="myModal"
+          style=""
+        >
+          Quick View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="products?.length == 0"
+    style="padding-bottom: 20px; padding-top: 40px"
+    class="container"
+  >
+    <div class="card empty">
+      <div class="div align-self-center">
+        <h1 class="title" style="margin-top: 10px">No Products Found</h1>
+      </div>
+      <div class="div align-self-center">
+        <div class="div">
+          <img
+            src="https://media.istockphoto.com/photos/happy-smiling-pug-puppy-dog-holding-up-wire-metal-shopping-basket-picture-id1126251896?k=20&m=1126251896&s=612x612&w=0&h=FWvYTuVbDKbUWgdw0Ly9JKnUjX0UB8j_tpUYg4bmqns="
+            alt=""
+            height="250"
+            width="350"
+          />
+        </div>
+      </div>
+      <div class="noprod" style="display: flex; justify-content: center">
+        <button
+          routerLink="/home"
+          class="btn btn-primary"
+          style="max-width: 150px"
+        >
+          Shop Now
+        </button>
+      </div>
+      <div
+        class="para"
+        style="display: flex; justify-content: center; padding-top: 30px"
+      >
+        <h2>Search for other Products</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

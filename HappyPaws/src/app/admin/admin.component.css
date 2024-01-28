@@ -1,0 +1,36 @@
+* {
+  font-family: Simonetta;
+}
+.pro {
+  margin-top: 10px;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  padding-left: 4em;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  padding-right: 2em;
+  line-height: 1.5em;
+  border: none;
+}
+.inner {
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+h1,
+h5 {
+  font-family: "Simonetta";
+}
+.inner img {
+  border-radius: 10px;
+}
+a {
+  font-size: 30px;
+  font-family: "Simonetta";
+  font-weight: 350;
+  display: block;
+  text-transform: uppercase;
+  color: #eef1f5;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}

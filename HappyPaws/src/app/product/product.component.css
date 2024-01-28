@@ -1,0 +1,121 @@
+* {
+  font-family: "Simonetta";
+}
+.product-outer {
+  padding-top: 70px;
+  padding-bottom: 93px;
+}
+.product {
+  max-width: 250px;
+  box-shadow: 0 2px 7px #dfdfdf;
+  background: #fff;
+  margin: 20px;
+  padding-top: 10px;
+}
+
+.product-tumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background: #fff;
+}
+
+.product-tumb img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-details {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.product-details h4 a {
+  font-size: 20px;
+  font-family: "Simonetta";
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product-details h4 a:hover {
+  color: grey;
+}
+
+.product-details small {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 0px;
+  color: #999;
+}
+
+.product-bottom-details {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-bottom-details div {
+  width: 50%;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #1572a1;
+}
+
+.empty {
+  max-width: 1400px;
+  width: 90%;
+  border-radius: 1rem;
+  border: transparent;
+  height: 500px;
+  margin-top: 100px;
+}
+.center img {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  height: 250px;
+  width: 350px;
+}
+
+.card {
+  margin: auto;
+  max-width: 1400px;
+  width: 90%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}
+
+.btn {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 45%;
+  font-size: 0.9rem;
+  padding: 5px;
+  border-radius: 0;
+  margin: 5px 5px 10px 0px;
+}
+
+.like {
+  display: flex;
+  justify-content: flex-end;
+}
+.like.active {
+  color: #eb1599;
+}
+
+.liked {
+  color: #eb1599;
+}

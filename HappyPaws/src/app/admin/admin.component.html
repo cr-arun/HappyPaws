@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="padding-top: 40px; padding-bottom: 100px">
+  <div class="col">
+    <div class="card pro">
+      <div class="text-center">
+        <h1>ADMIN DASHBOARD</h1>
+        <br /><br />
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card text-white inner" style="width: 15rem">
+            <a [routerLink]="['/admincategory']">
+              <img
+                class="card-img-top"
+                src="https://t3.ftcdn.net/jpg/03/59/09/04/360_F_359090423_7kA3WC9HnDEf1I9dx4ccGFhhO90vmzhk.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-img-overlay d-flex flex-column"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-white inner" style="width: 15rem">
+            <a [routerLink]="['/adminproduct']">
+              <img
+                class="card-img-top"
+                src="https://static.vecteezy.com/system/resources/previews/004/331/634/original/parcel-packing-blue-flat-design-long-shadow-glyph-icon-order-packaging-and-wrapping-cardboard-box-with-goods-postal-service-parcel-delivery-crate-storage-boxes-silhouette-illustration-vector.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <h5 class="mt-auto text-center">PRODUCT</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card text-white inner" style="width: 15rem">
+            <a [routerLink]="['/adminuser']">
+              <img
+                class="card-img-top"
+                src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-group-512.png"
+                height="237px"
+                alt="Card image cap"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <h5 class="mt-auto text-center">USER</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-white inner" style="width: 15rem">
+            <a [routerLink]="['/adminorder']">
+              <img
+                class="card-img-top"
+                src="https://pngroyale.com/wp-content/uploads/2022/03/Order-PNG-Transparent-Image.png"
+                alt="Card image cap"
+              />
+              <div class="card-img-overlay d-flex flex-column"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

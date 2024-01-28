@@ -1,0 +1,130 @@
+<app-navbar></app-navbar>
+<div class="container-fluid first-content">
+  <div class="row">
+    <div class="col-md-8 p-0">
+      <div class="content">
+        <h1 class="display-4">Happy Paws</h1>
+        <p class="my-4">
+          Pets are not our whole life, but they make out lives whole. We have
+          everything you need to train and keep your pet happy, healthy, and
+          strong.
+        </p>
+        <hr class="my-4" />
+        <p>We love out animals we know you will too!</p>
+      </div>
+    </div>
+
+    <div class="col p-0">
+      <img
+        class="img-fluid"
+        src="https://i.pinimg.com/originals/d6/0d/72/d60d7287169238e864ea8306ad0b5ea2.jpg"
+      />
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <h1 class="text-center">---- Categories ----</h1>
+  <div class="card pro">
+    <div class="text-center"></div>
+    <div class="row">
+      <div class="col" *ngFor="let temp of categorys">
+        <div class="card text-white inner" style="width: 25rem">
+          <a (click)="toProduct(temp.categoryId)">
+            <img
+              class="card-img-top"
+              [src]="temp.categoryImageUrl"
+              alt="Card image cap"
+            />
+            <div class="card-img-overlay d-flex flex-column">
+              <h2 class="mt-auto text-center">{{ temp.categoryName }}</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container sample">
+  <h1 class="text-center">---- What We Do ----</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 10rem">
+        <img
+          class="card-img-top"
+          src="https://cdn-icons-png.flaticon.com/512/3435/3435996.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h6 class="card-text text-center">PET ADOPTION</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 10rem">
+        <img
+          class="card-img-top"
+          src="https://cdn-icons-png.flaticon.com/512/2138/2138273.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h6 class="card-text text-center">PET CARE</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 10rem">
+        <img
+          class="card-img-top"
+          src="https://cdn-icons-png.flaticon.com/512/185/185465.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h6 class="card-text">PET TRAINING</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="my-4" />
+<div class="container-fluid s" style="padding-top: 5em; padding-bottom: 2em">
+  <div class="row" style="padding-left: 5em">
+    <div class="col-md-6">
+      <h5 class="" style="padding-top: 3em">
+        We have pure breed which are well trained and in good health. Our pets
+        are so playful it cheers you up all the time. Our pets bring out the
+        good in you.
+      </h5>
+    </div>
+    <div class="col-md-6" style="padding-left: 4em; padding-right: 2em">
+      <img
+        class="img-fluid"
+        src="https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg"
+      />
+    </div>
+  </div>
+</div>
+<hr class="my-4" />
+<div class="container-fluid about">
+  <h1 class="text-center">---- About Us ----</h1>
+  <div class="row" style="padding-left: 5em">
+    <div class="col-md-4">
+      <img
+        class="img-fluid"
+        src="https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      />
+    </div>
+    <div class="col-md-8">
+      <h5
+        class=""
+        style="padding-top: 3em; padding-right: 8em; padding-left: 8em"
+      >
+        Our mission is to provide dog and cat parents with everything that they
+        need to ensure their pet lives a long and happy life. We love to talk
+        about pets of all types and we are even more excited when you bring your
+        furry family member into the store to meet us! We want to make your life
+        better with out pets.
+      </h5>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

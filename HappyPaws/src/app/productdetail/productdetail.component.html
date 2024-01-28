@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="padding-top: 70px; padding-bottom: 70px">
+  <div class="card pro bg-light">
+    <div class="card-btn pb-3">
+      <a [routerLink]="['/home']"
+        >&leftarrow;<span class="text-muted">Back to shop</span></a
+      >
+    </div>
+    <div class="div" style="padding-right: 20px">
+      <svg
+        style="max-height: 40px; color: #ff1493; float: right"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        class="tweet-bottom-icon"
+        fill="currentColor"
+        *ngIf="product.wishlist === false"
+        (click)="wishToggle(product.productid)"
+      >
+        <g>
+          <path
+            d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"
+          ></path>
+        </g>
+      </svg>
+      <svg
+        style="max-height: 40px; float: right"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        class="tweet-bottom-icon liked"
+        fill="currentColor"
+        *ngIf="product.wishlist === true"
+        (click)="show(product.productid)"
+      >
+        <g>
+          <path
+            d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="wrapper row">
+      <div class="preview col-md-6">
+        <div class="preview-pic tab-content">
+          <div class="tab-pane active" id="pic-1">
+            <img [src]="product.imageUrl" height="300" />
+          </div>
+        </div>
+      </div>
+      <div class="details col-md-6">
+        <h2 class="product-title">{{ product.productName }}</h2>
+
+        <br />
+        <div class="row">
+          <div class="col-md-6 border-right">
+            <p><strong>Description</strong></p>
+            <p class="product-description">{{ product.description }}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Perks</strong></p>
+            <ul>
+              <li class="fa fa-circle green-dot">
+                &nbsp;<span style="color: black"> Well Trained Pets</span>
+              </li>
+              <br />
+              <li class="fa fa-circle green-dot">
+                &nbsp;<span style="color: black">
+                  Very Healthy and Active Pets</span
+                >
+              </li>
+              <br />
+              <li class="fa fa-circle green-dot">
+                &nbsp;<span style="color: black"> Pure breeds</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h4 class="price">
+          Current price:
+          <span class="green-text">&#x20B9;{{ product.price }}</span>
+        </h4>
+
+        <div class="action">
+          <label class="text-muted" for="quantity">QTY:</label>
+
+          &nbsp;
+          <a (click)="minus()">-</a><a class="border">{{ quantity }}</a
+          ><a (click)="add()">+</a>
+          <br />
+          <br />
+          <button class="btn" type="button" (click)="toCart()">
+            Add to cart
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="btn" type="button" (click)="buynow()">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-review></app-review>
+</div>
+<app-footer></app-footer>

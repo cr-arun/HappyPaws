@@ -1,0 +1,34 @@
+* {
+  font-family: "Simonetta";
+}
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  color: #000000;
+}
+
+.form-control {
+  border-radius: 15px;
+}
+.label {
+  font-size: large;
+}
+.log {
+  background-color: #fff;
+}
+.form-group {
+  width: 350px;
+}
+.login {
+  display: flex;
+  flex-wrap: wrap;
+}
+.login-side {
+  flex: 1 1 200px;
+  height: 50px;
+}
+.login-child {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,34 @@
+2022-08-17 16:26:08,635 INFO o.s.b.StartupInfoLogger [restartedMain] Starting PetStoreApplication using Java 13 on LAPTOP-RL3HPGG1 with PID 11672 (E:\Project\PetStore\target\classes started by Arun in E:\Project)
+2022-08-17 16:26:08,646 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-08-17 16:26:08,648 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-08-17 16:26:08,781 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 16:26:08,781 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 16:26:10,060 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 16:26:10,274 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 185 ms. Found 10 JPA repository interfaces.
+2022-08-17 16:26:12,009 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-08-17 16:26:12,063 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-08-17 16:26:12,066 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-08-17 16:26:12,073 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-08-17 16:26:12,230 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-08-17 16:26:12,230 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3438 ms
+2022-08-17 16:26:12,382 DEBUG o.s.w.f.GenericFilterBean [restartedMain] Filter 'jwtTokenFilter' configured for use
+2022-08-17 16:26:12,568 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 16:26:12,639 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-08-17 16:26:12,826 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 16:26:13,176 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-08-17 16:26:15,399 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-08-17 16:26:15,432 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-08-17 16:26:20,433 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 16:26:20,456 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 16:26:20,565 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 16:26:21,729 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60033e63, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@517927d8, org.springframework.security.web.context.SecurityContextPersistenceFilter@1880ad56, org.springframework.security.web.header.HeaderWriterFilter@796ad876, org.springframework.web.filter.CorsFilter@d872d9d, org.springframework.security.web.authentication.logout.LogoutFilter@6fbb8aa2, com.example.project.config.JwtTokenFilter@688d6d08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@591f9972, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c0fdc81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c95fc8e, org.springframework.security.web.session.SessionManagementFilter@331cf160, org.springframework.security.web.access.ExceptionTranslationFilter@4bfd579e, org.springframework.security.web.access.intercept.AuthorizationFilter@a0bb26c]
+2022-08-17 16:26:22,023 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-08-17 16:26:22,042 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-08-17 16:26:22,356 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 16:26:22,372 INFO o.s.b.StartupInfoLogger [restartedMain] Started PetStoreApplication in 14.874 seconds (JVM running for 15.836)
+2022-08-17 16:31:38,272 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 16:31:38,272 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-17 16:31:38,280 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
+2022-08-17 16:32:04,145 INFO c.e.p.s.LoginService [http-nio-8080-exec-6] Email LoggedIn arun@gmail.com
+2022-08-17 16:53:14,640 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m28s727ms780µs100ns).
+2022-08-17 18:07:11,175 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m26s167ms924µs200ns).

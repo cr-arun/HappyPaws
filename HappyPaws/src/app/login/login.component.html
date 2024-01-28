@@ -1,0 +1,81 @@
+<div class="container-fluid login p-0">
+  <div class="login-side">
+    <img
+      src="https://images.pexels.com/photos/5942760/pexels-photo-5942760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      height="745"
+      width="725"
+    />
+  </div>
+  <div class="login-side" style="padding-top: 150px">
+    <div class="login-child">
+      <h2>Login</h2>
+    </div>
+    <div class="login-child">
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="email" class="label">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter email"
+            name="email"
+            [(ngModel)]="user.email"
+            required
+            #email="ngModel"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            [class.is-invalid]="email.invalid && email.touched"
+          />
+          <div
+            *ngIf="email.errors && email.invalid && email.touched"
+            class="alert alert-danger"
+            style="margin-top: 10px"
+          >
+            <div *ngIf="email.hasError('required')">Email is required</div>
+            <div *ngIf="email.hasError('pattern')">Enter Valid Email</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd" class="label">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter password"
+            [(ngModel)]="user.password"
+            name="password"
+            required
+            #password="ngModel"
+          />
+        </div>
+        <tr></tr>
+        <div class="login-child">
+          <button
+            [disabled]="loginForm.form.invalid"
+            type="submit"
+            class="btn btn-primary"
+            style="width: 200px; border-radius: 15px"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <tr></tr>
+    <br />
+    <div class="login-child">
+      <small style="font-size: large"
+        >New Here?
+        <a
+          style="
+            color: blue;
+            text-decoration: none;
+            font-size: large;
+            font-family: Simonetta;
+          "
+          [routerLink]="['/signup']"
+          >SignUp</a
+        >
+      </small>
+    </div>
+  </div>
+</div>

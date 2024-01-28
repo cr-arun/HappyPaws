@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="margin-bottom: 100px; margin-top: 50px">
+  <div class="row">
+    <div class="container-fluid product">
+      <div class="title">
+        <div class="row">
+          <div class="col text-center">
+            <h4><b> Order Management</b></h4>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Products</th>
+            <th scope="col">Address</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of orders | slice: (page - 1) * pageSize:page * pageSize
+            "
+          >
+            <td>{{ item.id }}</td>
+            <td>{{ item.user.name }}</td>
+            <td>
+              <div class="row" *ngFor="let orderitem of item.orderItems">
+                {{ orderitem.product.productName }}
+              </div>
+            </td>
+            <td>
+              {{ item.address }}
+            </td>
+            <td>$ {{ item.totalPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ngb-pagination
+        class="border-top pt-3 d-flex justify-content-center"
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="orders.length"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

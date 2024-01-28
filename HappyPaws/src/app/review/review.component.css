@@ -1,0 +1,68 @@
+.tooltip-inner {
+  padding: 1.3em;
+}
+.sm-text {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.sm-text-1 {
+  font-size: 14px;
+}
+
+.green-tab {
+  background-color: #00c853;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 3px 5px 3px;
+}
+
+.btn-red {
+  background-color: #e64a19;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.btn-red:hover {
+  background-color: #bf360c;
+}
+
+.round-icon {
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.green-dot {
+  color: #4caf50;
+}
+
+p,
+span {
+  font-family: Cambria;
+  align-items: center;
+}
+
+.grey-text {
+  color: #bdbdbd;
+}
+
+.green-text {
+  color: #4caf50;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.profile-pic img {
+  border-radius: 50%;
+}
+
+.rating-dot {
+  letter-spacing: 5px;
+}
+
+.via {
+  border-radius: 20px;
+  height: 28px;
+}

@@ -1,0 +1,341 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid" style="margin-bottom: 100px">
+  <div class="row">
+    <div class="col">
+      <div class="container-fluid product">
+        <div class="title">
+          <div class="row">
+            <div class="col">
+              <h4><b> Category Management</b></h4>
+            </div>
+          </div>
+        </div>
+        <div class="row addproduct" *ngIf="isShown === false">
+          <button
+            type="button"
+            class="btn btn-primary productbutton"
+            data-toggle="modal"
+            data-target="#addcategory"
+          >
+            Add Category
+          </button>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Image</th>
+              <th scope="col">Category Name</th>
+
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let temp of categorys
+                  | slice: (page - 1) * pageSize:page * pageSize
+              "
+            >
+              <th scope="row">
+                <img
+                  [src]="temp.categoryImageUrl"
+                  alt=""
+                  width="90px"
+                  height="100px"
+                />
+              </th>
+              <td>{{ temp.categoryName }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="show(temp.categoryId)"
+                >
+                  Show Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ngb-pagination
+          class="border-top pt-3 d-flex justify-content-center"
+          [(page)]="page"
+          [pageSize]="pageSize"
+          [collectionSize]="length"
+        ></ngb-pagination>
+      </div>
+    </div>
+    <div class="col show" *ngIf="isShown">
+      <div class="container a">
+        <button class="btn btn-danger" style="float: right" (click)="back()">
+          x
+        </button>
+        <h2 class="detail">Category Details</h2>
+
+        <div class="row">
+          <div class="col">
+            <div class="from-group">
+              <div class="product-tumb">
+                <img [src]="category.categoryImageUrl" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <h4>{{ category.categoryName }}</h4>
+          </div>
+        </div>
+        <div class="col text-center">
+          <button
+            class="btn btn-secondary btnbot"
+            data-toggle="modal"
+            data-target="#editcategory"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger btnbot"
+            data-toggle="modal"
+            data-target="#deletecategory"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----------------------Add Category--------------------------->
+<div
+  class="modal fade bd-example-modal-lg"
+  id="addcategory"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addproductLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Category</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addCategory="ngForm" (ngSubmit)="newCategory()">
+          <div class="form-group">
+            <label for="category_name" class="label">Category Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Product Name"
+              name="categoryName"
+              [(ngModel)]="category1.categoryName"
+              required
+              #categoryName="ngModel"
+              [class.is-invalid]="categoryName.invalid && categoryName.touched"
+            />
+            <div
+              *ngIf="
+                categoryName.errors &&
+                categoryName.invalid &&
+                categoryName.touched
+              "
+              class="alert alert-danger"
+              style="margin-top: 10px"
+            >
+              <div *ngIf="categoryName.hasError('required')">
+                Category Name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl" class="label">Image Url:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter image url"
+              name="categoryImageUrl"
+              required
+              [(ngModel)]="category1.categoryImageUrl"
+              #categoryImageUrl="ngModel"
+              [class.is-invalid]="
+                categoryImageUrl.invalid && categoryImageUrl.touched
+              "
+            />
+
+            <div
+              *ngIf="
+                categoryImageUrl.errors &&
+                categoryImageUrl.invalid &&
+                categoryImageUrl.touched
+              "
+              class="alert alert-danger"
+              style="margin-top: 10px"
+            >
+              <div *ngIf="categoryImageUrl.hasError('required')">
+                ImageUrl is required
+              </div>
+            </div>
+          </div>
+
+          <div class="con">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="
+                margin-left: 275px;
+                margin-right: 50px;
+                width: 200px;
+                border-radius: 20px;
+              "
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------------------------------------Edit Product------------------------------------------------------->
+<div
+  class="modal fade bd-example-modal-lg"
+  id="editcategory"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="editcategoryLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editCategory="ngForm" (ngSubmit)="editCategoryLocal()">
+          <div class="form-group">
+            <label for="categoty_name" class="label">Category Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Category Name"
+              name="categoryName"
+              [(ngModel)]="category.categoryName"
+              required
+              #categoryName="ngModel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="categoryImageUrl" class="label">Image Url:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter image url"
+              name="categoryImageUrl"
+              required
+              [(ngModel)]="category.categoryImageUrl"
+              #categoryImageUrl="ngModel"
+              [class.is-invalid]="
+                categoryImageUrl.invalid && categoryImageUrl.touched
+              "
+            />
+            <div
+              *ngIf="
+                categoryImageUrl.errors &&
+                categoryImageUrl.invalid &&
+                categoryImageUrl.touched
+              "
+              class="alert alert-danger"
+              style="margin-top: 10px"
+            >
+              <div *ngIf="categoryImageUrl.hasError('required')">
+                ImageUrl is required
+              </div>
+            </div>
+          </div>
+
+          <div class="con">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="
+                margin-left: 275px;
+                margin-right: 50px;
+                width: 200px;
+                border-radius: 20px;
+              "
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------------------------------------------Delete User---------------------------------------------------------------------->
+<div
+  class="modal fade"
+  id="deletecategory"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteproductLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Category</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">Are you sure to Delete Category</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="deleteCategory()"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

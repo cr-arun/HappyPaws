@@ -1,0 +1,61 @@
+* {
+  font-family: "Simonetta";
+}
+.first-content {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+.content {
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.content p {
+  font-size: 18px;
+}
+.pro {
+  margin-top: 10px;
+
+  background-color: rgb(227, 226, 226);
+  padding-left: 4em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-right: 2em;
+  line-height: 1.5em;
+  border: none;
+}
+.inner {
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.inner img {
+  border-radius: 10px;
+}
+
+.sample {
+  padding-top: 5em;
+}
+.sample h6 {
+  text-transform: uppercase;
+  font-weight: 350;
+  display: block;
+}
+.sample .row {
+  padding-left: 10em;
+}
+.sample .card {
+  border: none;
+}
+.about {
+  padding-top: 5em;
+  padding-bottom: 2em;
+}
+.about img {
+  border-radius: 10px;
+}
+
+.s img {
+  border-radius: 10px;
+  max-height: 320px;
+}
